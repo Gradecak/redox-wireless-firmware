@@ -5,3 +5,10 @@ include:
     shield: redox_right
   - board: nice_nano//zmk
     shield: settings_reset
+  # Temporary debug build with USB serial logging enabled, to watch kscan
+  # activity live. Remove once the matrix issue is diagnosed.
+  - board: nice_nano//zmk
+    shield: redox_left
+    snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_ZMK_LOG_LEVEL_DBG=y
+    artifact-name: redox_left_debug
